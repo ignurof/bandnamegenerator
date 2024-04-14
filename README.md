@@ -1,6 +1,8 @@
 # bandnamegenerator
 
-Visit the site here: https://ignurof.github.io/www-howtosowseeds-com
+bandnamegenerator is an interactive band name generation website created to help spread more diverse and unique band names out into the world. The goal of the website is to assist in coming up with new and fresh band names and the main target demograpic would be aspiring founders of new music bands. bandnamegenerator will be a great tool to use while brainstorming band names for beginners but it could be just as useful to experienced bands looking to rebrand themselves.
+
+Visit the site here: https://ignurof.github.io/bandnamegenerator
 
 ![Responsiveness](link here)
 
@@ -20,6 +22,10 @@ Visit the site here: https://ignurof.github.io/www-howtosowseeds-com
 - [**Credits**](#credits)
 
 ## Features 
+
+The main feature of the website that will really make it stand out in my opinion would be that everything will be handled on one page, as if it were an app.
+With the help of JavaScript's DOM Manipulation the website can be built in such a way that the page content will be switched out dynamically and with a smooth transition to ease between two different page's content.
+Nice and snappy animated transitions with the help of CSS to really make the website pop and give the user some nice interaction feedback experience.
 
 ### Existing Features
 
@@ -58,7 +64,7 @@ None
 
 ## Deployment
 
-GitHub pages were used to deploy this website and this step by step guide will tell you how to deploy it yourself after you have forked the project.
+GitHub pages were used to deploy this website and this step by step guide will tell you how to deploy it yourself after you have cloned the repository.
 
 - Click the "Settings" tab. 
 - Go to "Pages" under the "Code and Automation" section. 
@@ -74,14 +80,13 @@ GitHub pages were used to deploy this website and this step by step guide will t
 - The greatest documentation Mozilla Developer Docs: https://developer.mozilla.org/en-US/
 - Invaluable syntax helper w3schools: https://www.w3schools.com/
 - Repo Banner image with the help of: https://ui.dev/amiresponsive
+- Wireframes created with Balsamiq Cloud: https://balsamiq.cloud
 
 ### Content 
-
-- Hamburger menu input checkbox functionality from Code Institute's Love Running project.
 
 ### Media
 
 - Social media icons are from FontAwesome: https://fontawesome.com/
-- All photos used are from Pexels: https://www.pexels.com/
+- Favicon: 
 
 ###### Created and Maintained by (https://github.com/ignurof)
