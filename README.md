@@ -29,9 +29,12 @@ Visit the site here: https://ignurof.github.io/www-howtosowseeds-com
 
 ### Wireframes
 
-![Wireframe for Mobile Home page](link here)
+![Wireframe for Mobile Home view](assets/images/readme/wireframe_mobile_home.png)
+![Wireframe for Mobile Generator view](assets/images/readme/wireframe_mobile_generator.png)
+![Wireframe for Mobile Result view](assets/images/readme/wireframe_mobile_result.png)
+![Wireframe for Mobile Contact view](assets/images/readme/wireframe_mobile_contact.png)
 
-![Wireframe for Laptop Home page](link here)
+![Wireframe for Laptop Home page](assets/images/readme/wireframe_laptop_home.png)
 
 ### Interaction Experience
 
