@@ -99,7 +99,7 @@ footer > button {
     margin-bottom: 3rem;
 }
 
-.action-box > form > button {
+.action-box button {
     font-size: 240%;
     text-transform: uppercase;
     background-color: orange;
@@ -110,9 +110,10 @@ footer > button {
 }
 
 .action-box > p {
-    margin-top: 1rem;
+    margin: 1rem 0;
     font-weight: bold;
     text-align: center;
+    font-size: 80%;
 }
 
 .action-box > a {
@@ -125,6 +126,17 @@ footer > button {
     text-decoration: none;
     padding: 1rem;
     border-radius: 2rem;
+}
+
+#regenerate-btn {
+    margin: 2rem 0;
+    font-size: 200%;
+}
+
+#tryagain-btn {
+    background-color: red;
+    margin: 0 0 1rem 0;
+    font-size: 140%;
 }
 
 /* Page views need to be hidden from the start */
