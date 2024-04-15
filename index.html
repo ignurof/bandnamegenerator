@@ -24,12 +24,44 @@
         </header>
 
         <main>
-            <section class="action-box">
+            <section id="start-view" class="action-box">
                 <form id="username-login">
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username">
                     <button type="submit" id="start-btn">Start</button>
                 </form>
+            </section>
+
+            <section id="generator-view" class="action-box">
+                <form id="generator">
+                    <label for="radio-1">Label</label>
+                    <input type="radio" id="radio-1">
+                    <label for="radio-2">Label2</label>
+                    <input type="radio" id="radio-2">
+
+                    <label for="genre">Genre:</label>
+                    <select id="genre" name="genre">
+                        <option value="x">x</option>
+                        <option value="x">x</option>
+                        <option value="x">x</option>
+                        <option value="x">x</option>
+                    </select>
+
+                    <label for="checkbox-1">Check1:</label>
+                    <input type="checkbox" id="checkbox-1" checked>
+                    <label for="checkbox-2" id="checkbox-2">Check2:</label>
+                    <input type="checkbox" id="checkbox-2">
+
+                    <button type="submit" id="generate-btn">Generate</button>
+                </form>
+            </section>
+
+            <section id="result-view" class="action-box">
+                <p>Username's band will be called:</p>
+                <h2>bandnamehere</h2>
+
+                <button id="regenerate-btn">Regenerate</button>
+                <button id="tryagain-btn">Try Again</button>
             </section>
         </main>
 
@@ -76,7 +108,7 @@
                           target="_blank">ignurof</a>
             </p>
         </footer>
-        
+
         <!-- Internal script sources -->
         <script src="js/app.js"></script>
         <!-- External script sources -->
