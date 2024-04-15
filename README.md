@@ -87,6 +87,6 @@ GitHub pages were used to deploy this website and this step by step guide will t
 ### Media
 
 - Social media icons are from FontAwesome: https://fontawesome.com/
-- Favicon: 
+- Favicon: https://favicon.io/emoji-favicons/studio-microphone
 
 ###### Created and Maintained by (https://github.com/ignurof)
