@@ -127,4 +127,14 @@ footer > button {
     border-radius: 2rem;
 }
 
+/* Page views need to be hidden from the start */
+/* JS will handle making them visible again */
+#generator-view {
+    display: none;
+}
+
+#result-view {
+    display: none;
+}
+
 /* Responsiveness */
