@@ -1,0 +1,51 @@
+/* created by ignurof with mobile first (320x480px) */
+
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* General */
+
+body {
+
+}
+
+/* Header */
+
+header {
+    padding: 2rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 240%;
+}
+
+/* Main */
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+/* Footer */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    border-top: 2px solid black;
+}
+
+/* Styling classes */
+
+.action-box {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Responsiveness */
