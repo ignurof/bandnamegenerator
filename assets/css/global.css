@@ -15,10 +15,13 @@
     --footer-color: #cae2e8;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
     height: 100vh;
 }
 
