@@ -134,6 +134,30 @@ footer > button {
     border-radius: 2rem;
 }
 
+.action-box fieldset {
+    width: 100%;
+    margin-bottom: 2rem;
+    text-align: center;
+    border: 0;
+    display: inherit;
+}
+
+.action-box fieldset section {
+    width: 50%;
+    text-align: center;
+    display: inherit;
+    flex-direction: column;
+}
+
+.action-box fieldset label {
+    margin: 0 auto;
+}
+
+#genre-select {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
 #regenerate-btn {
     margin: 2rem 0;
     font-size: 200%;
@@ -147,6 +171,12 @@ footer > button {
 
 button {
     cursor: pointer;
+}
+
+#generator-view > form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* Page views need to be hidden from the start */
