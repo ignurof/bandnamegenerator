@@ -12,6 +12,7 @@
     --hover-color: #9ede2f;
     --cta-color: #e39d2d;
     --att-color: #e3392d;
+    --footer-color: #cae2e8;
 }
 
 body {
@@ -47,6 +48,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--footer-color);
 }
 
 footer > ul {
