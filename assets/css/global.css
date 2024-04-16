@@ -25,6 +25,10 @@ body {
     height: 100vh;
 }
 
+button {
+    cursor: pointer;
+}
+
 /* Header */
 
 header {
@@ -174,10 +178,6 @@ footer > button {
     margin: 0 0 1rem 0;
     font-size: 140%;
     background-color: var(--att-color);
-}
-
-button {
-    cursor: pointer;
 }
 
 #generator-view > form {
