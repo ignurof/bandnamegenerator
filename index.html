@@ -34,23 +34,38 @@
 
             <section id="generator-view" class="action-box">
                 <form id="generator">
-                    <label for="radio-1">Label</label>
-                    <input type="radio" id="radio-1">
-                    <label for="radio-2">Label2</label>
-                    <input type="radio" id="radio-2">
+                    <fieldset>
+                        <section>
+                            <label for="radio-1">Label</label>
+                            <input type="radio" id="radio-1">
+                        </section>
+                        <section>
+                            <label for="radio-2">Label2</label>
+                            <input type="radio" id="radio-2">
+                        </section>
+                    </fieldset>
 
-                    <label for="genre">Genre:</label>
-                    <select id="genre" name="genre">
-                        <option value="x">x</option>
-                        <option value="x">x</option>
-                        <option value="x">x</option>
-                        <option value="x">x</option>
-                    </select>
+                    <div id="genre-select">
+                        <label for="genre">Genre:</label>
+                        <br>
+                        <select id="genre" name="genre">
+                            <option value="x">x</option>
+                            <option value="x">x</option>
+                            <option value="x">x</option>
+                            <option value="x">x</option>
+                        </select>
+                    </div>
 
-                    <label for="checkbox-1">Check1:</label>
-                    <input type="checkbox" id="checkbox-1" checked>
-                    <label for="checkbox-2" id="checkbox-2">Check2:</label>
-                    <input type="checkbox" id="checkbox-2">
+                    <fieldset>
+                        <section>
+                            <label for="checkbox-1">Check1:</label>
+                            <input type="checkbox" id="checkbox-1" checked>
+                        </section>
+                        <section>
+                            <label for="checkbox-2" id="checkbox-2">Check2:</label>
+                            <input type="checkbox" id="checkbox-2">
+                        </section>
+                    </fieldset>
 
                     <button type="submit" id="generate-btn">Generate</button>
                 </form>
