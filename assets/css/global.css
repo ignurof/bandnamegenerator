@@ -16,8 +16,12 @@
 }
 
 body {
-    overflow-x: hidden;
     max-width: 100vw;
+    min-height: 100vh;
+    overflow-x: clip;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header */
@@ -37,7 +41,6 @@ main {
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    min-height: 50vh;
 }
 
 /* Footer */
@@ -49,6 +52,7 @@ footer {
     flex-direction: column;
     align-items: center;
     background-color: var(--footer-color);
+    margin-top: auto;
 }
 
 footer > ul {
