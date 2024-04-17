@@ -32,7 +32,7 @@ const startView = document.getElementById("start-view");
 const generatorView = document.getElementById("generator-view");
 const resultView = document.getElementById("result-view");
 
-/* startView is technically the home page, so we want to default to it */
+// startView is technically the home page, so we want to default to it
 let activeView = startView;
 
 const usernameLogin = document.getElementById("username-login");
@@ -53,7 +53,7 @@ function changeView(value) {
     activeView.style.display = "flex";
 }
 
-/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random */
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function randomInteger(min, max) {
     /* Math.random gives us a random floating-point number between 0(inclusive) and 1(exclusive)
      * To get a larger range just multiply the range put together and add the inclusive var
@@ -75,9 +75,34 @@ function setBandName(value) {
     resultBandName.innerText = value;
 }
 
+function getBadCharacters(word) {
+    let hasBadCharacter = false;
+
+    console.log(word);
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
+    // https://regexr.com/
+    // | is OR
+    // this very long regex handles all invalid characters that i can see on my keyboard
+    const regex = /<|>|\/|\\|\"|\'|,|\.|-|=|\||§|½|!|@|#|£|\$|¤|%|&|\{|\}|\[|\]|\(|\)|\`|\´|\^|\¨|\~|\*|:|;|\+|_|[0-9]/g;
+    if(regex.test(word)) hasBadCharacter = true;
+
+    return hasBadCharacter;
+}
+
 startBtn.addEventListener("click", () => {
     // disable form submission (avoids page refresh) 
     event.preventDefault();
+
+    let formData = new FormData(usernameLogin); 
+    if(!formData.has("username")) return console.error("username form input not found");
+
+    let username = formData.get("username");
+
+    // Input validation
+    if(username.length == 0) return console.error("empty username");
+    if(username.length <= 1) return console.error("username too short");
+    if(username.length >= 17) return console.error("username too long");
+    if(getBadCharacters(username)) return console.error("username contains bad character");
 
     changeView(generatorView);
 }); 
