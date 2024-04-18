@@ -102,18 +102,18 @@ footer > button {
     flex-direction: column;
     padding: 1rem;
     align-items: center;
+    width: 100%;
 }
 
 .action-box > form > label {
     position: relative;
-    right: 1.4rem;
+    right: 1.3rem;
 }
 
 .action-box > form > input[type=text] {
     border: 0;
     height: 2rem;
-    width: 70%;
-    margin-bottom: 3rem;
+    width: 50%; 
 }
 
 .action-box button {
@@ -162,6 +162,20 @@ footer > button {
 
 .action-box fieldset label {
     margin: 0 auto;
+}
+
+#error {
+    visibility: hidden;
+    margin: 1rem 0 3rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#error > span {
+    color: red;
+    font-weight: bold;
+    margin-right: 0.4rem;
 }
 
 #genre-select {

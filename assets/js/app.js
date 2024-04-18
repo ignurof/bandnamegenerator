@@ -46,6 +46,8 @@ const tryAgainBtn = document.getElementById("tryagain-btn");
 const resultUsername = document.getElementById("result-username");
 const resultBandName = document.getElementById("result-bandname");
 
+const errorDiv = document.getElementById("error");
+const errorMsg = document.getElementById("error-msg");
 
 function changeView(value) {
     activeView.style.display = "none";
@@ -75,19 +77,51 @@ function setBandName(value) {
     resultBandName.innerText = value;
 }
 
-function getBadCharacters(word) {
-    let hasBadCharacter = false;
+function showError(value) {
+    value ? errorDiv.style.visibility = "visible" : errorDiv.style.visibility = "hidden";
+}
 
-    console.log(word);
+function setErrorMsg(msg) {
+    errorMsg.innerText = msg;
+    showError(true);
+}
+
+function validateInput(event = null, username = null) {
+    let validationTarget = null;
+
+    if(event == null){
+        validationTarget = username;
+    }
+    else{
+        validationTarget = event.target.value;
+    }
+
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
     // https://regexr.com/
     // | is OR
     // this very long regex handles all invalid characters that i can see on my keyboard
     const regex = /<|>|\/|\\|\"|\'|,|\.|-|=|\||§|½|!|@|#|£|\$|¤|%|&|\{|\}|\[|\]|\(|\)|\`|\´|\^|\¨|\~|\*|:|;|\+|_|[0-9]/g;
-    if(regex.test(word)) hasBadCharacter = true;
+    if(regex.test(validationTarget)){
+        return setErrorMsg("invalid characters in username"); 
+    }
 
-    return hasBadCharacter;
+    if(validationTarget.length == 0){
+        return setErrorMsg("empty username");
+    }
+
+    if(validationTarget.length <= 1){
+        return setErrorMsg("username too short");
+    }
+
+    if(validationTarget.length >= 17){
+        return setErrorMsg("username too long");
+    }
+
+    showError(false);
+    return true; 
 }
+
+document.getElementById("username").addEventListener("input", validateInput); 
 
 startBtn.addEventListener("click", () => {
     // disable form submission (avoids page refresh) 
@@ -96,15 +130,8 @@ startBtn.addEventListener("click", () => {
     let formData = new FormData(usernameLogin); 
     if(!formData.has("username")) return console.error("username form input not found");
 
-    let username = formData.get("username");
-
-    // Input validation
-    if(username.length == 0) return console.error("empty username");
-    if(username.length <= 1) return console.error("username too short");
-    if(username.length >= 17) return console.error("username too long");
-    if(getBadCharacters(username)) return console.error("username contains bad character");
-
-    changeView(generatorView);
+    if(validateInput(null, formData.get("username")))
+        changeView(generatorView);
 }); 
 
 generateBtn.addEventListener("click", () => {
