@@ -130,8 +130,10 @@ startBtn.addEventListener("click", () => {
     let formData = new FormData(usernameLogin); 
     if(!formData.has("username")) return console.error("username form input not found");
 
-    if(validateInput(null, formData.get("username")))
+    if(validateInput(null, formData.get("username"))){
+        resultUsername.innerText = formData.get("username");    
         changeView(generatorView);
+    }
 }); 
 
 generateBtn.addEventListener("click", () => {
