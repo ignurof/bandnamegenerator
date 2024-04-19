@@ -17,7 +17,6 @@ Visit the site here: https://ignurof.github.io/bandnamegenerator
 - [**Testing**](#testing)
     + [Manual Testing](#manual-testing)
     + [Validator Testing](#validator-testing)
-    + [Accessibility Testing](#accessibility-testing)
     + [Unfixed Bugs](#unfixed-bugs)
 - [**Deployment**](#deployment)
 - [**Credits**](#credits)
@@ -184,21 +183,15 @@ The process looks something like this:
 
 HTML was tested through the w3.org validator found here: https://validator.w3.org
 
-![HTML Validation](link here)
+![HTML Validation](assets/images/readme/html_validation.png)
 
 CSS was tested through the jigsaw.w3.org css specific validator found here: https://jigsaw.w3.org/css-validator/
 
-![CSS Validation](link here)
+![CSS Validation](assets/images/readme/css_validation.png)
 
 JS was tested using JSHint found at https://jshint.com/
 
-![JS Validation](link here)
-
-### Accessibility Testing
-
-Accessibility was testing using Lighthouse: 
-
-![Accessibility Testing](link here)
+![JS Validation](assets/images/readme/js_validation.png)
 
 ### Unfixed Bugs
 
