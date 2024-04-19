@@ -132,6 +132,19 @@ function generateBandName() {
     }
     while(secondSuffix == "");
 
+    if(document.getElementById("radio-1").checked){
+        firstPrefix = "fast";
+    }
+    else{
+        firstPrefix = "slow";
+    }
+
+    if(document.getElementById("checkbox-1").checked)
+        secondSuffix = "song";
+
+    if(document.getElementById("checkbox-2").checked)
+        secondSuffix = "coat";
+
     return firstPrefix + firstWord + " " + secondWord + secondSuffix;
 }
 
@@ -337,15 +350,12 @@ if(contactBtn != null){
         if(!formData.has("contact-msg"))
             return setErrorMsg(errorMsgDiv, "msg form data not found");
 
-        let canSend = false;
-
-        if(validateNameInput(null, formData.get("contact-name"))) canSend = true;
-
-        if(validateEmailInput(null, formData.get("contact-email"))) canSend = true;
-
-        if(validateMsgInput(null, formData.get("contact-msg"))) canSend = true;
-
-        if(canSend)
-            window.location.assign("thanks.html");
+        if(validateNameInput(null, formData.get("contact-name"))){
+            if(validateEmailInput(null, formData.get("contact-email"))){
+                if(validateMsgInput(null, formData.get("contact-msg"))){
+                    window.location.assign("thanks.html");
+                }
+            }
+        }
     });
 }
