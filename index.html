@@ -20,7 +20,7 @@
     </head>
     <body>
         <header>
-            <h1>Band Name<br>Generator</h1>
+            <a href="index.html" aria-label="Go to home page"><h1>Band Name<br>Generator</h1></a>
         </header>
 
         <main>
@@ -28,7 +28,11 @@
                 <form id="username-login">
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username">
-                    <button type="submit" id="start-btn">Start</button>
+                    <div id="username-error" class="error">
+                        <span>Error:</span>
+                        <p id="username-error-msg"></p>
+                    </div>
+                    <button type="submit" id="start-btn" aria-label="Submit your username(Switches to next page view)">Start</button>
                 </form>
             </section>
 
@@ -36,47 +40,73 @@
                 <form id="generator">
                     <fieldset>
                         <section>
-                            <label for="radio-1">Label</label>
-                            <input type="radio" id="radio-1">
+                            <label for="radio-1">Fast</label>
+                            <input type="radio" id="radio-1" name="radio">
                         </section>
                         <section>
-                            <label for="radio-2">Label2</label>
-                            <input type="radio" id="radio-2">
+                            <label for="radio-2">Slow</label>
+                            <input type="radio" id="radio-2" name="radio">
                         </section>
                     </fieldset>
 
                     <div id="genre-select">
-                        <label for="genre">Genre:</label>
+                        <label for="genre">Genre</label>
                         <br>
                         <select id="genre" name="genre">
-                            <option value="x">x</option>
-                            <option value="x">x</option>
-                            <option value="x">x</option>
-                            <option value="x">x</option>
+                            <option value="x">Pop</option>
+                            <option value="x">Rock</option>
+                            <option value="x">Jazz</option>
+                            <option value="x">Opera</option>
                         </select>
                     </div>
 
                     <fieldset>
                         <section>
-                            <label for="checkbox-1">Check1:</label>
-                            <input type="checkbox" id="checkbox-1" checked>
+                            <label for="checkbox-1">Edgy</label>
+                            <input type="checkbox" id="checkbox-1">
                         </section>
                         <section>
-                            <label for="checkbox-2" id="checkbox-2">Check2:</label>
+                            <label for="checkbox-2" id="checkbox-2">Cool</label>
                             <input type="checkbox" id="checkbox-2">
                         </section>
                     </fieldset>
 
-                    <button type="submit" id="generate-btn">Generate</button>
+                    <button type="submit" id="generate-btn" aria-label="Generate a band new(Switches to next page view)">Generate</button>
                 </form>
             </section>
 
             <section id="result-view" class="action-box">
-                <p>Username's band will be called:</p>
-                <h2>bandnamehere</h2>
+                <p><span id="result-username">Username</span>'s band will be called:</p>
+                <h2 id="result-bandname">bandnamehere</h2>
 
-                <button id="regenerate-btn">Regenerate</button>
-                <button id="tryagain-btn">Try Again</button>
+                <button id="regenerate-btn" aria-label="Regenerate the bandname">Regenerate</button>
+                <button id="tryagain-btn" aria-label="Go back to the start(Switches to home page view)">Try Again</button>
+            </section>
+
+            <section id="contact-view" class="action-box">
+                <h2>Contact</h2>
+                <p>Got any suggestions or want to report any issues? Send a message!</p>
+                <form id="contact">
+                    <label for="contact-name">Name:</label>
+                    <input type="text" id="contact-name" name="contact-name">
+                    <div id="name-error" class="error">
+                        <span>Error:</span>
+                        <p id="name-error-msg"></p>
+                    </div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="contact-email" name="contact-email">
+                    <div id="email-error" class="error">
+                        <span>Error:</span>
+                        <p id="email-error-msg"></p>
+                    </div>
+                    <label for="contact-msg">Message:</label>
+                    <textarea id="contact-msg" name="contact-msg"></textarea>
+                    <div id="msg-error" class="error">
+                        <span>Error:</span>
+                        <p id="msg-error-msg"></p>
+                    </div>
+                    <button type="submit" id="contact-btn" aria-label="Submit your contact message(Go to Home page)">Send</button>
+                </form>
             </section>
         </main>
 
@@ -116,7 +146,7 @@
                 </li>
             </ul>
             <p>Looking to get in contact with the webmaster?</p>
-            <button>Contact</button>
+            <button id="contact-page-btn" aria-label="Switch to contact page view">Contact</button>
             <p>
             Created by <a href="https://github.com/ignurof"
                           aria-label="Go to webmaster ignurof's GitHub (Opens in a new tab)"

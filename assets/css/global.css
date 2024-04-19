@@ -1,5 +1,9 @@
 /* created by ignurof with mobile first (320x480px) */
 
+/* External imports */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
 /* Reset styles */
 * {
     margin: 0;
@@ -12,7 +16,9 @@
     --hover-color: #9ede2f;
     --cta-color: #e39d2d;
     --att-color: #e3392d;
-    --footer-color: #cae2e8;
+    --footer-color: #CADEEE;
+    --bg-color: #F2F9FE;
+    --dark-color: #232323;
 }
 
 html, body {
@@ -23,6 +29,14 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background-color: var(--bg-color);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+button {
+    cursor: pointer;
 }
 
 /* Header */
@@ -30,6 +44,11 @@ body {
 header {
     padding: 2rem 2rem 0 2rem;
     text-align: center;
+}
+
+header > a {
+    text-decoration: none;
+    color: var(--dark-color);
 }
 
 h1 {
@@ -41,13 +60,14 @@ h1 {
 main {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    width: 100%;
+    align-items: center;
 }
 
 /* Footer */
 
 footer {
-    border-top: 2px solid black;
+    border-top: 2px solid var(--dark-color);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -66,7 +86,7 @@ footer > ul {
 
 footer > ul li a {
     font-size: 200%;
-    color: black;
+    color: var(--dark-color);
     margin: 1rem 2rem 1rem 2rem;
 }
 
@@ -76,7 +96,7 @@ footer p {
 
 footer > button {
     margin: 0.2rem 0 2rem 0;
-    background-color: black;
+    background-color: var(--dark-color);
     color: white;
     cursor: pointer;
     padding: 0.4rem;
@@ -85,12 +105,14 @@ footer > button {
 /* Styling classes */
 
 .action-box {
-    background-color: black;
+    background-color: var(--dark-color);
     color: white;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 80%;
+    margin: 1rem;
 }
 
 .action-box > form {
@@ -98,18 +120,17 @@ footer > button {
     flex-direction: column;
     padding: 1rem;
     align-items: center;
+    width: 100%;
 }
 
 .action-box > form > label {
-    position: relative;
-    right: 1.4rem;
+    text-align: center;
 }
 
 .action-box > form > input[type=text] {
     border: 0;
     height: 2rem;
-    width: 70%;
-    margin-bottom: 3rem;
+    width: 50%; 
 }
 
 .action-box button {
@@ -160,6 +181,31 @@ footer > button {
     margin: 0 auto;
 }
 
+.action-box #genre-select {
+    width: 100%;
+}
+
+.action-box #genre-select > select {
+    width: 50%;
+    margin-bottom: 1rem;
+    font-size: 140%;
+    text-align: center;
+}
+
+.error {
+    visibility: hidden;
+    margin: 1rem 0 2rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.error > span {
+    color: red;
+    font-weight: bold;
+    margin-right: 0.4rem;
+}
+
 #genre-select {
     margin-bottom: 2rem;
     text-align: center;
@@ -176,15 +222,52 @@ footer > button {
     background-color: var(--att-color);
 }
 
-button {
-    cursor: pointer;
-}
-
 #generator-view > form {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
+
+#generator-view > form fieldset section {
+    display: flex;
+    align-items: center;
+}
+
+#generator-view > form fieldset input {
+    width: 100%;
+}
+
+#contact-view > p {
+    font-weight: normal;
+}
+
+#contact-view > form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-view > form > label {
+    width: 100%;
+}
+
+#contact-view > form > textarea {
+    width: 60%;
+    height: 4rem;
+}
+
+#contact-view > #contact > .error {
+    margin: 0.6rem 0 0.8rem 0;
+}
+
+#result-view > h2 {
+    text-align: center;
+}
+
+form input {
+    max-width: 60%;
+    height: 2rem;
+}
+
 
 /* Page views need to be hidden from the start */
 /* JS will handle making them visible again */
@@ -196,4 +279,53 @@ button {
     display: none;
 }
 
+#contact-view {
+    display: none;
+}
+
 /* Responsiveness */
+@media screen and (min-width: 500px) {
+    .action-box {
+        width: 70%;
+    }
+
+    form input {
+        max-width: 40%;
+    }
+
+}
+
+@media screen and (min-width: 700px) {
+    .action-box {
+        width: 60%;
+    }
+    
+    form input {
+        max-width: 30%;
+    }
+
+}
+
+@media screen and (min-width: 900px) {
+    .action-box {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .action-box {
+        width: 40%;
+    }
+    
+    form input {
+        max-width: 25%;
+    }
+
+}
+
+@media screen and (min-width: 1800px) {
+    .action-box {
+        width: 30%;
+    }
+
+}
