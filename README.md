@@ -118,21 +118,36 @@ I want the experience to invoke positivity and happiness with the user as they a
 ### Wireframes
 
 Mobile Home view
+
 ![Wireframe for Mobile Home view](assets/images/readme/wireframe_mobile_home.png)
+
 Mobile Generator view
+
 ![Wireframe for Mobile Generator view](assets/images/readme/wireframe_mobile_generator.png)
+
 Mobile Result view
+
 ![Wireframe for Mobile Result view](assets/images/readme/wireframe_mobile_result.png)
+
 Mobile Contact view
+
 ![Wireframe for Mobile Contact view](assets/images/readme/wireframe_mobile_contact.png)
 
+
 Laptop Home view
+
 ![Wireframe for Laptop Home view](assets/images/readme/wireframe_laptop_home.png)
+
 Laptop Generator view
+
 ![Wireframe for Laptop Generator view](assets/images/readme/wireframe_laptop_generator.png)
+
 Laptop Result view
+
 ![Wireframe for Laptop Result view](assets/images/readme/wireframe_laptop_result.png)
+
 Laptop Contact view
+
 ![Wireframe for Laptop Contact view](assets/images/readme/wireframe_laptop_contact.png)
 
 ### Interaction Experience
