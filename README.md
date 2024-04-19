@@ -32,60 +32,76 @@ Nice and snappy animated transitions with the help of CSS to really make the web
 
 Mobile Home view
 The landingpage of the website and also the start of the app.
+
 ![Mobile Home view](assets/images/readme/feat_mobile_home.png)  
 
 Mobile Home error view
 Input validation handles username input to avoid a bad username.
 Realtime error processing of username input.
+
 ![Mobile Home error view](assets/images/readme/feat_mobile_home_error.png)  
 
 Mobile Generator view
 Fun little app with values to pick from to generate a new band name.
+
 ![Mobile Generator view](assets/images/readme/feat_mobile_generator.png)  
 
 Mobile Result view
 Displays the results from the app band name generation and lets the user regenerate from the same values or try again from the start.
+
 ![Mobile Result view](assets/images/readme/feat_mobile_result.png)  
 
 Mobile Contact view
 The place to contact the webmaster.
+
 ![Mobile Contact view](assets/images/readme/feat_mobile_contact.png)  
 
 Mobile Contact error view
 Input validation handles input to avoid a bad contact details.
 Realtime error processing of contact input.
+
 ![Mobile Contact error view](assets/images/readme/feat_mobile_contact_error.png)  
 
 Mobile Thanks view
 Sending the contact form currently does not send anything, any only redirects to this page.
+
 ![Mobile Thanks view](assets/images/readme/feat_mobile_thanks.png)  
 
 Mobile 404 view
 If there is ever an error the user will be redirected here.
+
 ![Mobile 404 view](assets/images/readme/feat_mobile_404.png)  
 
 Laptop Home view
+
 ![Laptop Home view](assets/images/readme/feat_laptop_home.png)  
 
 Laptop Home error view
+
 ![Laptop Home error view](assets/images/readme/feat_laptop_home_error.png)  
 
 Laptop Generator view
+
 ![Laptop Generator view](assets/images/readme/feat_laptop_generator.png)  
 
 Laptop Result view
+
 ![Laptop Result view](assets/images/readme/feat_laptop_result.png)  
 
 Laptop Contact view
+
 ![Laptop Contact view](assets/images/readme/feat_laptop_contact.png)  
 
 Laptop Contact error view
+
 ![Laptop Contact error view](assets/images/readme/feat_laptop_contact_error.png)  
 
 Laptop Thanks view
+
 ![Laptop Thanks view](assets/images/readme/feat_laptop_thanks.png)  
 
 Laptop 404 view
+
 ![Laptop 404 view](assets/images/readme/feat_laptop_404.png)  
 
 ### Features Left to Implement
