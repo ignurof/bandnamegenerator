@@ -132,6 +132,19 @@ function generateBandName() {
     }
     while(secondSuffix == "");
 
+    if(document.getElementById("radio-1").checked){
+        firstPrefix = "fast";
+    }
+    else{
+        firstPrefix = "slow";
+    }
+
+    if(document.getElementById("checkbox-1").checked)
+        secondSuffix = "song";
+
+    if(document.getElementById("checkbox-2").checked)
+        secondSuffix = "coat";
+
     return firstPrefix + firstWord + " " + secondWord + secondSuffix;
 }
 
