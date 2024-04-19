@@ -31,6 +31,7 @@ const secondWords = [
 const startView = document.getElementById("start-view");
 const generatorView = document.getElementById("generator-view");
 const resultView = document.getElementById("result-view");
+const contactView = document.getElementById("contact-view");
 
 // startView is technically the home page, so we want to default to it
 let activeView = startView;
@@ -43,11 +44,25 @@ const generateBtn = document.getElementById("generate-btn");
 const regenerateBtn = document.getElementById("regenerate-btn");
 const tryAgainBtn = document.getElementById("tryagain-btn");
 
+const contact = document.getElementById("contact");
+const contactPageBtn = document.getElementById("contact-page-btn");
+const contactName = document.getElementById("contact-name");
+const contactEmail = document.getElementById("contact-email");
+const contactMsg = document.getElementById("contact-msg");
+const contactBtn = document.getElementById("contact-btn");
+
 const resultUsername = document.getElementById("result-username");
 const resultBandName = document.getElementById("result-bandname");
 
-const errorDiv = document.getElementById("error");
-const errorMsg = document.getElementById("error-msg");
+const errorUsernameDiv = document.getElementById("username-error");
+const errorUsernameMsg = document.getElementById("username-error-msg");
+const errorNameDiv = document.getElementById("name-error");
+const errorNameMsg = document.getElementById("name-error-msg");
+const errorEmailDiv = document.getElementById("email-error");
+const errorEmailMsg = document.getElementById("email-error-msg");
+const errorMsgDiv = document.getElementById("msg-error");
+const errorMsgMsg = document.getElementById("msg-error-msg");
+
 
 function changeView(value) {
     activeView.style.display = "none";
@@ -77,16 +92,29 @@ function setBandName(value) {
     resultBandName.innerText = value;
 }
 
-function showError(value) {
-    value ? errorDiv.style.visibility = "visible" : errorDiv.style.visibility = "hidden";
+function showError(target, value) {
+    value ? target.style.visibility = "visible" : target.style.visibility = "hidden";
 }
 
-function setErrorMsg(msg) {
-    errorMsg.innerText = msg;
-    showError(true);
+function setErrorMsg(target, msg) {
+    target.children.item(1).innerText = msg;
+    showError(target, true);
 }
 
-function validateInput(event = null, username = null) {
+function hasBadChar(word){
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
+    // https://regexr.com/
+    // | is OR
+    // this very long regex handles all invalid characters that i can see on my keyboard
+    const regex = /<|>|\/|\\|\"|\'|,|\.|-|=|\||§|½|!|@|#|£|\$|¤|%|&|\{|\}|\[|\]|\(|\)|\`|\´|\^|\¨|\~|\*|:|;|\+|_|[0-9]/g;
+    if(regex.test(word)){
+        return true; 
+    }
+
+    return false;
+}
+
+function validateUsernameInput(event = null, username = null) {
     let validationTarget = null;
 
     if(event == null){
@@ -96,41 +124,111 @@ function validateInput(event = null, username = null) {
         validationTarget = event.target.value;
     }
 
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
-    // https://regexr.com/
-    // | is OR
-    // this very long regex handles all invalid characters that i can see on my keyboard
-    const regex = /<|>|\/|\\|\"|\'|,|\.|-|=|\||§|½|!|@|#|£|\$|¤|%|&|\{|\}|\[|\]|\(|\)|\`|\´|\^|\¨|\~|\*|:|;|\+|_|[0-9]/g;
-    if(regex.test(validationTarget)){
-        return setErrorMsg("invalid characters in username"); 
+    if(hasBadChar(validationTarget)){
+        return setErrorMsg(errorUsernameDiv, "invalid characters");
     }
 
     if(validationTarget.length == 0){
-        return setErrorMsg("empty username");
+        return setErrorMsg(errorUsernameDiv, "empty username");
     }
 
     if(validationTarget.length <= 1){
-        return setErrorMsg("username too short");
+        return setErrorMsg(errorUsernameDiv, "username too short");
     }
 
     if(validationTarget.length >= 17){
-        return setErrorMsg("username too long");
+        return setErrorMsg(errorUsernameDiv, "username too long");
     }
 
-    showError(false);
+    showError(errorUsernameDiv, false);
     return true; 
 }
 
-document.getElementById("username").addEventListener("input", validateInput); 
+function validateNameInput(event = null, name = null) {
+    let validationTarget = null;
+
+    if(event == null){
+        validationTarget = name;
+    }
+    else{
+        validationTarget = event.target.value;
+    }
+
+    if(hasBadChar(validationTarget)){
+        return setErrorMsg(errorNameDiv, "invalid characters");
+    }
+
+    if(validationTarget.length == 0){
+        return setErrorMsg(errorNameDiv, "empty name");
+    }
+
+    if(validationTarget.length <= 1){
+        return setErrorMsg(errorNameDiv, "name too short");
+    }
+
+    if(validationTarget.length >= 42){
+        return setErrorMsg(errorNameDiv, "name too long");
+    }
+
+    showError(errorNameDiv, false);
+    return true;
+}
+
+function validateEmailInput(event = null, email = null) {
+    let validationTarget = null;
+
+    if(event == null){
+        validationTarget = email;
+    }
+    else{
+        validationTarget = event.target.value;
+    }
+
+    if(validationTarget.length <= 5){
+        return setErrorMsg(errorEmailDiv, "email too short");
+    }
+
+    if(contactEmail.validity.typeMismatch)
+        return setErrorMsg(errorEmailDiv, "invalid email");
+
+    showError(errorEmailDiv, false);
+    return true;
+}
+
+function validateMsgInput(event = null, msg = null) {
+    let validationTarget = null;
+
+    if(event == null){
+        validationTarget = msg;
+    }
+    else{
+        validationTarget = event.target.value;
+    }
+
+    if(validationTarget.length == 0)
+        return setErrorMsg(errorMsgDiv, "empty message");
+
+    if(validationTarget.length <= 10)
+        return setErrorMsg(errorMsgDiv, "too short message");
+
+    if(validationTarget.length >= 200)
+        return setErrorMsg(errorMsgDiv, "cant exceed 200 characters");
+
+    showError(errorMsgDiv, false);
+    return true;
+}
+
+document.getElementById("username").addEventListener("input", validateUsernameInput); 
 
 startBtn.addEventListener("click", () => {
     // disable form submission (avoids page refresh) 
     event.preventDefault();
 
-    let formData = new FormData(usernameLogin); 
-    if(!formData.has("username")) return console.error("username form input not found");
+    const formData = new FormData(usernameLogin); 
+    if(!formData.has("username")) 
+        return setErrorMsg(errorUsernameDiv, "username form data not found"); 
 
-    if(validateInput(null, formData.get("username"))){
+    if(validateUsernameInput(null, formData.get("username"))){
         resultUsername.innerText = formData.get("username");    
         changeView(generatorView);
     }
@@ -151,4 +249,37 @@ regenerateBtn.addEventListener("click", () => {
 
 tryAgainBtn.addEventListener("click", () => {
     changeView(startView);
+});
+
+contactPageBtn.addEventListener("click", () => {
+    changeView(contactView);
+});
+
+contactName.addEventListener("input", validateNameInput);
+contactEmail.addEventListener("input", validateEmailInput);
+contactMsg.addEventListener("input", validateMsgInput);
+contactBtn.addEventListener("click", () => {
+    // disable form submission (avoids page refresh) 
+    event.preventDefault();
+
+    const formData = new FormData(contact);
+    if(!formData.has("contact-name"))
+        return setErrorMsg(errorNameDiv, "name form data not found");
+
+    if(!formData.has("contact-email"))
+        return setErrorMsg(errorEmailDiv, "mail form data not found");
+
+    if(!formData.has("contact-msg"))
+        return setErrorMsg(errorMsgDiv, "msg form data not found");
+
+    let canSend = false;
+
+    if(validateNameInput(null, formData.get("contact-name"))) canSend = true;
+
+    if(validateEmailInput(null, formData.get("contact-email"))) canSend = true;
+
+    if(validateMsgInput(null, formData.get("contact-msg"))) canSend = true;
+
+    if(canSend)
+        window.location.assign("thanks.html");
 });

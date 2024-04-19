@@ -28,9 +28,9 @@
                 <form id="username-login">
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username">
-                    <div id="error">
+                    <div id="username-error" class="error">
                         <span>Error:</span>
-                        <p id="error-msg"></p>
+                        <p id="username-error-msg"></p>
                     </div>
                     <button type="submit" id="start-btn">Start</button>
                 </form>
@@ -82,6 +82,32 @@
                 <button id="regenerate-btn">Regenerate</button>
                 <button id="tryagain-btn">Try Again</button>
             </section>
+
+            <section id="contact-view" class="action-box">
+                <h2>Contact</h2>
+                <p>Got any suggestions or want to report any issues? Send a message!</p>
+                <form id="contact">
+                    <label for="contact-name">Name:</label>
+                    <input type="text" id="contact-name" name="contact-name">
+                    <div id="name-error" class="error">
+                        <span>Error:</span>
+                        <p id="name-error-msg"></p>
+                    </div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="contact-email" name="contact-email">
+                    <div id="email-error" class="error">
+                        <span>Error:</span>
+                        <p id="email-error-msg"></p>
+                    </div>
+                    <label for="contact-msg">Message:</label>
+                    <textarea id="contact-msg" name="contact-msg"></textarea>
+                    <div id="msg-error" class="error">
+                        <span>Error:</span>
+                        <p id="msg-error-msg"></p>
+                    </div>
+                    <button type="submit" id="contact-btn">Send</button>
+                </form>
+            </section>
         </main>
 
         <footer>
@@ -120,7 +146,7 @@
                 </li>
             </ul>
             <p>Looking to get in contact with the webmaster?</p>
-            <button>Contact</button>
+            <button id="contact-page-btn">Contact</button>
             <p>
             Created by <a href="https://github.com/ignurof"
                           aria-label="Go to webmaster ignurof's GitHub (Opens in a new tab)"
