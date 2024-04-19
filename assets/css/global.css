@@ -164,6 +164,15 @@ footer > button {
     margin: 0 auto;
 }
 
+.action-box #genre-select {
+    width: 100%;
+}
+
+.action-box #genre-select > select {
+    width: 50%;
+    margin-bottom: 1rem;
+}
+
 .error {
     visibility: hidden;
     margin: 1rem 0 2rem 0;
