@@ -17,6 +17,7 @@ Visit the site here: https://ignurof.github.io/bandnamegenerator
 - [**Testing**](#testing)
     + [Manual Testing](#manual-testing)
     + [Validator Testing](#validator-testing)
+    + [Accessibility Testing](#accessibility-testing)
     + [Unfixed Bugs](#unfixed-bugs)
 - [**Deployment**](#deployment)
 - [**Credits**](#credits)
@@ -29,20 +30,79 @@ Nice and snappy animated transitions with the help of CSS to really make the web
 
 ### Existing Features
 
+Mobile Home view
+The landingpage of the website and also the start of the app.
+![Mobile Home view](assets/images/readme/feat_mobile_home.png)
+Mobile Home error view
+Input validation handles username input to avoid a bad username.
+Realtime error processing of username input.
+![Mobile Home error view](assets/images/readme/feat_mobile_home_error.png)
+Mobile Generator view
+Fun little app with values to pick from to generate a new band name.
+![Mobile Generator view](assets/images/readme/feat_mobile_generator.png)
+Mobile Result view
+Displays the results from the app band name generation and lets the user regenerate from the same values or try again from the start.
+![Mobile Result view](assets/images/readme/feat_mobile_result.png)
+Mobile Contact view
+The place to contact the webmaster.
+![Mobile Contact view](assets/images/readme/feat_mobile_contact.png)
+Mobile Contact error view
+Input validation handles input to avoid a bad contact details.
+Realtime error processing of contact input.
+![Mobile Contact error view](assets/images/readme/feat_mobile_contact_error.png)
+Mobile Thanks view
+Sending the contact form currently does not send anything, any only redirects to this page.
+![Mobile Thanks view](assets/images/readme/feat_mobile_thanks.png)
+Mobile 404 view
+If there is ever an error the user will be redirected here.
+![Mobile 404 view](assets/images/readme/feat_mobile_404.png)
+
+Laptop Home view
+![Laptop Home view](assets/images/readme/feat_laptop_home.png)
+Laptop Home error view
+![Laptop Home error view](assets/images/readme/feat_laptop_home_error.png)
+Laptop Generator view
+![Laptop Generator view](assets/images/readme/feat_laptop_generator.png)
+Laptop Result view
+![Laptop Result view](assets/images/readme/feat_laptop_result.png)
+Laptop Contact view
+![Laptop Contact view](assets/images/readme/feat_laptop_contact.png)
+Laptop Contact error view
+![Laptop Contact error view](assets/images/readme/feat_laptop_contact_error.png)
+Laptop Thanks view
+![Laptop Thanks view](assets/images/readme/feat_laptop_thanks.png)
+Laptop 404 view
+![Laptop 404 view](assets/images/readme/feat_laptop_404.png)
+
 ### Features Left to Implement
+
+- Animated page view transitions
+- Interaction feedback on buttons
+- Interaction feedback on inputs
 
 ## User Experience
 
+My main thought process going into this project and this app website idea was that the user experience should be as smooth and logical as possible so users of any skillset and capacity can utilize the website's features and have a good time while visiting.
+I want the experience to invoke positivity and happiness with the user as they are interacting with the site and the intention is to eventually funnel the users from this generator app to all the other generator app websites that I want to create in the future.
+
 ### Wireframes
 
+Mobile Home view
 ![Wireframe for Mobile Home view](assets/images/readme/wireframe_mobile_home.png)
+Mobile Generator view
 ![Wireframe for Mobile Generator view](assets/images/readme/wireframe_mobile_generator.png)
+Mobile Result view
 ![Wireframe for Mobile Result view](assets/images/readme/wireframe_mobile_result.png)
+Mobile Contact view
 ![Wireframe for Mobile Contact view](assets/images/readme/wireframe_mobile_contact.png)
 
+Laptop Home view
 ![Wireframe for Laptop Home view](assets/images/readme/wireframe_laptop_home.png)
+Laptop Generator view
 ![Wireframe for Laptop Generator view](assets/images/readme/wireframe_laptop_generator.png)
+Laptop Result view
 ![Wireframe for Laptop Result view](assets/images/readme/wireframe_laptop_result.png)
+Laptop Contact view
 ![Wireframe for Laptop Contact view](assets/images/readme/wireframe_laptop_contact.png)
 
 ### Interaction Experience
