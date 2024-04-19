@@ -36,6 +36,11 @@ header {
     text-align: center;
 }
 
+header > a {
+    text-decoration: none;
+    color: inherit;
+}
+
 h1 {
     font-size: 240%;
 }
@@ -45,7 +50,8 @@ h1 {
 main {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    width: 100%;
+    align-items: center;
 }
 
 /* Footer */
@@ -95,6 +101,8 @@ footer > button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 80%;
+    margin: 1rem;
 }
 
 .action-box > form {
@@ -106,8 +114,7 @@ footer > button {
 }
 
 .action-box > form > label {
-    position: relative;
-    right: 1.3rem;
+    text-align: center;
 }
 
 .action-box > form > input[type=text] {
@@ -171,6 +178,8 @@ footer > button {
 .action-box #genre-select > select {
     width: 50%;
     margin-bottom: 1rem;
+    font-size: 140%;
+    text-align: center;
 }
 
 .error {
@@ -209,6 +218,15 @@ footer > button {
     justify-content: center;
 }
 
+#generator-view > form fieldset section {
+    display: flex;
+    align-items: center;
+}
+
+#generator-view > form fieldset input {
+    width: 100%;
+}
+
 #contact-view > p {
     font-weight: normal;
 }
@@ -220,12 +238,6 @@ footer > button {
 
 #contact-view > form > label {
     width: 100%;
-    left: 3.1rem;
-}
-
-#contact-view > form > input {
-    width: 60%;
-    height: 2rem;
 }
 
 #contact-view > form > textarea {
@@ -240,6 +252,12 @@ footer > button {
 #result-view > h2 {
     text-align: center;
 }
+
+form input {
+    max-width: 60%;
+    height: 2rem;
+}
+
 
 /* Page views need to be hidden from the start */
 /* JS will handle making them visible again */
@@ -256,3 +274,48 @@ footer > button {
 }
 
 /* Responsiveness */
+@media screen and (min-width: 500px) {
+    .action-box {
+        width: 70%;
+    }
+
+    form input {
+        max-width: 40%;
+    }
+
+}
+
+@media screen and (min-width: 700px) {
+    .action-box {
+        width: 60%;
+    }
+    
+    form input {
+        max-width: 30%;
+    }
+
+}
+
+@media screen and (min-width: 900px) {
+    .action-box {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .action-box {
+        width: 40%;
+    }
+    
+    form input {
+        max-width: 25%;
+    }
+
+}
+
+@media screen and (min-width: 1800px) {
+    .action-box {
+        width: 30%;
+    }
+
+}
