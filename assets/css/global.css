@@ -123,6 +123,16 @@ footer > button {
     width: 100%;
 }
 
+.action-box > form section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+} 
+
+.action-box > form section label {
+    width: 100%;
+}
+
 .action-box > form > label {
     text-align: center;
 }
@@ -167,18 +177,23 @@ footer > button {
     margin-bottom: 2rem;
     text-align: center;
     border: 0;
-    display: inherit;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.action-box fieldset section {
+.action-box fieldset div {
     width: 50%;
     text-align: center;
     display: inherit;
     flex-direction: column;
 }
 
-.action-box fieldset label {
-    margin: 0 auto;
+.action-box form section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 50%;
 }
 
 .action-box #genre-select {
@@ -228,7 +243,7 @@ footer > button {
     justify-content: center;
 }
 
-#generator-view > form fieldset section {
+#generator-view > form fieldset div {
     display: flex;
     align-items: center;
 }
