@@ -4,7 +4,7 @@ bandnamegenerator is an interactive band name generation website created to help
 
 Visit the site here: https://ignurof.github.io/bandnamegenerator
 
-![Responsiveness](link here)
+![Responsiveness](assets/images/readme/responsive.png)
 
 # Table of Contents
 
@@ -168,7 +168,17 @@ Just because our browser devtools are showing us it looks responsive and correct
 
 ### Manual Testing
 
-TODO: Bullet points how it was tested for each feature
+My process for manually testing the website is very rudimentary and straightforward.
+First I always personally test new implementations using the DevTools after each development step.
+When I consider a feature complete or a set of features that go together complete, then I move onto the real manual testing.
+I put myself in the shows of a random user just stumbling upon the website for the first time for each feature I want to test.
+The process looks something like this:
+
+- Go to the page/section that contains the feature I want to test.
+- Click, write, resize and other interactions that the user might do.
+- Note any eventual errors, logical or styling issues down in a notepad.
+- Step through the code from top to bottom to work through the issue.
+- Test the changes and confirm the issue is fixed before pushing changes.
 
 ### Validator Testing 
 
