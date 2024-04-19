@@ -237,6 +237,10 @@ footer > button {
     margin: 0.6rem 0 0.8rem 0;
 }
 
+#result-view > h2 {
+    text-align: center;
+}
+
 /* Page views need to be hidden from the start */
 /* JS will handle making them visible again */
 #generator-view {

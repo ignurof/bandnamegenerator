@@ -28,6 +28,27 @@ const secondWords = [
     "click"
 ];
 
+const firstWordPrefix = [
+    "blue",
+    "red",
+    "green",
+    "purple",
+    "orange",
+    "white",
+    "black",
+    "beige",
+    "violet",
+    "pink",
+    "green"
+];
+
+const secondWordSuffix = [
+    "day",
+    "night",
+    "rain",
+    "sunny"
+];
+
 const startView = document.getElementById("start-view");
 const generatorView = document.getElementById("generator-view");
 const resultView = document.getElementById("result-view");
@@ -78,14 +99,34 @@ function randomInteger(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
+
 function generateBandName() {
     const randomFirstInteger = randomInteger(0, firstWords.length);
     const randomSecondInteger = randomInteger(0, secondWords.length);
 
-    const firstWord = firstWords[Math.floor(randomFirstInteger / 2 * 3.6)]; 
-    const secondWord = secondWords[Math.floor(randomSecondInteger / 3 * 1.4)];
+    const firstWord = firstWords[randomFirstInteger];
+    const secondWord = secondWords[randomSecondInteger];
+    let firstPrefix = "";
+    let secondSuffix = "";
 
-    return firstWord + " " + secondWord;
+    for(let i = 0; i < randomFirstInteger; i++){
+        firstPrefix = firstWordPrefix[randomSecondInteger]; 
+    }
+
+    if(firstPrefix == undefined){
+        firstPrefix = firstWordPrefix[randomInteger(0, firstWordPrefix.length)];
+    }
+
+    if(firstPrefix == ""){
+        firstPrefix = firstWordPrefix[1];
+    }
+
+    do{
+        secondSuffix = secondWordSuffix[randomInteger(0, secondWordSuffix.length)];
+    }
+    while(secondSuffix == "");
+
+    return firstPrefix + firstWord + " " + secondWord + secondSuffix;
 }
 
 function setBandName(value) {
