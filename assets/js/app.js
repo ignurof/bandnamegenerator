@@ -84,8 +84,18 @@ const errorEmailMsg = document.getElementById("email-error-msg");
 const errorMsgDiv = document.getElementById("msg-error");
 const errorMsgMsg = document.getElementById("msg-error-msg");
 
+// https://stackoverflow.com/questions/5999118/how-can-i-add-or-update-a-query-string-parameter
+let searchParams = new URLSearchParams(window.location.search);
+if(searchParams.get("contact") == "yes"){
+    changeView(contactView);
+}
 
 function changeView(value) {
+    if(activeView == null){
+        window.location.assign("index.html?contact=yes");
+        return;
+    }
+    
     activeView.style.display = "none";
     activeView = value;
     activeView.style.display = "flex";
@@ -259,68 +269,87 @@ function validateMsgInput(event = null, msg = null) {
     return true;
 }
 
-document.getElementById("username").addEventListener("input", validateUsernameInput); 
+if(document.getElementById("username") != null)
+    document.getElementById("username").addEventListener("input", validateUsernameInput); 
 
-startBtn.addEventListener("click", () => {
-    // disable form submission (avoids page refresh) 
-    event.preventDefault();
+if(startBtn != null){
+    startBtn.addEventListener("click", () => {
+        // disable form submission (avoids page refresh) 
+        event.preventDefault();
 
-    const formData = new FormData(usernameLogin); 
-    if(!formData.has("username")) 
-        return setErrorMsg(errorUsernameDiv, "username form data not found"); 
+        const formData = new FormData(usernameLogin); 
+        if(!formData.has("username")) 
+            return setErrorMsg(errorUsernameDiv, "username form data not found"); 
 
-    if(validateUsernameInput(null, formData.get("username"))){
-        resultUsername.innerText = formData.get("username");    
-        changeView(generatorView);
-    }
-}); 
+        if(validateUsernameInput(null, formData.get("username"))){
+            resultUsername.innerText = formData.get("username");    
+            changeView(generatorView);
+        }
+    }); 
+}
 
-generateBtn.addEventListener("click", () => {
-    // disable form submission (avoids page refresh) 
-    event.preventDefault();
+if(generateBtn != null){
+    generateBtn.addEventListener("click", () => {
+        // disable form submission (avoids page refresh) 
+        event.preventDefault();
 
-    changeView(resultView);
+        changeView(resultView);
 
-    setBandName(generateBandName());
-});
+        setBandName(generateBandName());
+    });
+}
 
-regenerateBtn.addEventListener("click", () => {
-    setBandName(generateBandName());
-});
+if(regenerateBtn != null){
+    regenerateBtn.addEventListener("click", () => {
+        setBandName(generateBandName());
+    });
+}
 
-tryAgainBtn.addEventListener("click", () => {
-    changeView(startView);
-});
+if(tryAgainBtn != null){
+    tryAgainBtn.addEventListener("click", () => {
+        changeView(startView);
+    });
+}
 
-contactPageBtn.addEventListener("click", () => {
-    changeView(contactView);
-});
+if(contactPageBtn != null){
+    contactPageBtn.addEventListener("click", () => {
+        changeView(contactView);
+    });
+}
 
-contactName.addEventListener("input", validateNameInput);
-contactEmail.addEventListener("input", validateEmailInput);
-contactMsg.addEventListener("input", validateMsgInput);
-contactBtn.addEventListener("click", () => {
-    // disable form submission (avoids page refresh) 
-    event.preventDefault();
+if(contactName != null)
+    contactName.addEventListener("input", validateNameInput);
 
-    const formData = new FormData(contact);
-    if(!formData.has("contact-name"))
-        return setErrorMsg(errorNameDiv, "name form data not found");
+if(contactEmail != null)
+    contactEmail.addEventListener("input", validateEmailInput);
 
-    if(!formData.has("contact-email"))
-        return setErrorMsg(errorEmailDiv, "mail form data not found");
+if(contactMsg != null)
+    contactMsg.addEventListener("input", validateMsgInput);
 
-    if(!formData.has("contact-msg"))
-        return setErrorMsg(errorMsgDiv, "msg form data not found");
+if(contactBtn != null){
+    contactBtn.addEventListener("click", () => {
+        // disable form submission (avoids page refresh) 
+        event.preventDefault();
 
-    let canSend = false;
+        const formData = new FormData(contact);
+        if(!formData.has("contact-name"))
+            return setErrorMsg(errorNameDiv, "name form data not found");
 
-    if(validateNameInput(null, formData.get("contact-name"))) canSend = true;
+        if(!formData.has("contact-email"))
+            return setErrorMsg(errorEmailDiv, "mail form data not found");
 
-    if(validateEmailInput(null, formData.get("contact-email"))) canSend = true;
+        if(!formData.has("contact-msg"))
+            return setErrorMsg(errorMsgDiv, "msg form data not found");
 
-    if(validateMsgInput(null, formData.get("contact-msg"))) canSend = true;
+        let canSend = false;
 
-    if(canSend)
-        window.location.assign("thanks.html");
-});
+        if(validateNameInput(null, formData.get("contact-name"))) canSend = true;
+
+        if(validateEmailInput(null, formData.get("contact-email"))) canSend = true;
+
+        if(validateMsgInput(null, formData.get("contact-msg"))) canSend = true;
+
+        if(canSend)
+            window.location.assign("thanks.html");
+    });
+}
