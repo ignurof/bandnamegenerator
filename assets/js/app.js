@@ -76,13 +76,9 @@ const resultUsername = document.getElementById("result-username");
 const resultBandName = document.getElementById("result-bandname");
 
 const errorUsernameDiv = document.getElementById("username-error");
-const errorUsernameMsg = document.getElementById("username-error-msg");
 const errorNameDiv = document.getElementById("name-error");
-const errorNameMsg = document.getElementById("name-error-msg");
 const errorEmailDiv = document.getElementById("email-error");
-const errorEmailMsg = document.getElementById("email-error-msg");
 const errorMsgDiv = document.getElementById("msg-error");
-const errorMsgMsg = document.getElementById("msg-error-msg");
 
 // https://stackoverflow.com/questions/5999118/how-can-i-add-or-update-a-query-string-parameter
 let searchParams = new URLSearchParams(window.location.search);
@@ -144,7 +140,7 @@ function setBandName(value) {
 }
 
 function showError(target, value) {
-    value ? target.style.visibility = "visible" : target.style.visibility = "hidden";
+    return value ? target.style.visibility = "visible" : target.style.visibility = "hidden";
 }
 
 function setErrorMsg(target, msg) {
